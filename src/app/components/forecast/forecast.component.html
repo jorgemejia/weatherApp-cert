@@ -1,0 +1,28 @@
+<div class="container">
+  <h4>{{ locationForecast.location.name }}</h4>
+  <div class="row">
+    <div class="col justify-content-lg-center">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col justify-content-md-center">
+              <ul style="width: 50%">
+                <li *ngFor="let forecast of locationForecast?.forecast?.forecastday; index as i">
+                  <p>
+                    {{forecast.date | date: 'mediumDate'}} -Max: {{forecast.day.maxtemp_c}} -Min: {{forecast.day.mintemp_c}}
+                    <img src="{{forecast.day.condition.icon}}}">
+                  </p>
+                </li>
+              </ul>
+            </div>
+            <div class="col">
+<!--              <img style="width: 50%" class="img-thumbnail" src="{{weatherData.current.condition.icon}}">-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <button type="button" [routerLink]="'/'"  class="btn btn-primary">Back to main</button>
+</div>

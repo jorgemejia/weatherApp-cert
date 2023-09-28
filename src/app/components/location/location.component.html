@@ -1,0 +1,23 @@
+<div class="container">
+  <h4>Add a location</h4>
+  <div class="row">
+    <div class="col justify-content-lg-center">
+      <div class="card">
+        <div class="card-body">
+          <h5>Enter a zipcode</h5>
+          <div>
+            <div class="input-group mb-3">
+              <input [(ngModel)]="location" type="number" class="form-control" placeholder="Zip code" aria-label="Zip code" aria-describedby="button-addon2">
+              <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="addLocation()">Add location</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <app-weather-condition [zipCodes]="locations" *ngIf="locations.length > 0"></app-weather-condition>
+</div>
+
